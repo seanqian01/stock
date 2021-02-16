@@ -1,7 +1,8 @@
 import ccxt
 print(ccxt.exchanges)
-bitmax_test = ccxt.binance()
-bitmax_test.fetch_ticker('BTC/USD')
+bitflyer_test = ccxt.bitflyer()
+Stock = "BTC/USD"
+print(bitflyer_test.fetch_ticker(Stock))
 
 
 
