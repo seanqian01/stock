@@ -5,8 +5,6 @@ class midclass():
     def __init__(self):
         '''
         初始化数据
-        ftx_test_net.apikey= 'OSTI2KGhHF4UHsQDUkQlkJuwHjF1QipElMb1IZaW'
-        ftx_test_net.secret= '3OSzJWG8shu1Tt9zfPTHtdfBlXTlElp-x3JqP-vX'
         '''
 
         pass
