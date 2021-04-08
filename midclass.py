@@ -1,6 +1,7 @@
 # 我们需要获取数据，但是需要时间间隔获取
 # 我们需要容错
 # 一些数据的处理不需要放到逻辑层里
+from fmz import *
 class midclass():
     def __init__(self,that_exchange):
         '''
@@ -67,7 +68,7 @@ class midclass():
 
     def get_ohlc_data(self,period):
         '''
-        :return: 获取K线信息
+        :return: 获取K线信息,15分钟
         '''
         self.ohlc_data = self.exchange.GetRecords(period)
 
@@ -81,14 +82,14 @@ class midclass():
             except:
                 return False
 
-        elif order_type == 'Sell'
-            try：
+        elif order_type == 'Sell':
+            try:
                 order_id = self.exchange.Sell(price, amount)
             except:
                 return True
         return order_id
 
-    def cacel_order(self，order_id):
+    def cacel_order(self,order_id):
         '''
         :return: 取消挂单信息
         '''
@@ -98,12 +99,19 @@ class midclass():
         '''
         :return: 刷新信息
         '''
-        if not self.GetAccount()
+        if not self.GetAccount():
             return 'false get account'
-        if not self.GetTicker()
+        if not self.GetTicker():
             return 'false get ticker'
-        if not self.Getdepth()
+        if not self.Getdepth():
             return 'false get depth'
-        if not self.Get_ohlc_data()
+        if not self.Get_ohlc_data():
             return 'false get ohlc data'
         return 'refeash finished!!!'
+
+
+def main():
+    test_mid = midclass(exchange)
+    Log(test_mid.get_account())
+    Log(test_mid.refresh_data())
+    Log(test_mid.get_ticker())
